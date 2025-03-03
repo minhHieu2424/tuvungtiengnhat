@@ -92,4 +92,4 @@ app.delete("/api/words/:id", async (req, res) => {
     res.json({ message: "Xóa từ vựng thành công" });
 });
 
-app.listen(port, () => console.log(`Server running on http://localhost:${port}`));
+app.listen(process.env.PORT || port, () => console.log(`Server running`));
