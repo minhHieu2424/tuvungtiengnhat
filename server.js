@@ -15,6 +15,10 @@ app.use(cors());
 app.use(express.json());
 
 /** 🔥 Lấy danh sách tất cả chủ đề */
+app.get("/", async (req, res) => {
+    const result = await pool.query("SELECT * FROM topics");
+    res.json(result.rows);
+});
 app.get("/api/topics", async (req, res) => {
     const result = await pool.query("SELECT * FROM topics");
     res.json(result.rows);
